@@ -1,10 +1,10 @@
-package br.com.fiap.demo;
+package br.com.fiap.Gs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GsEletroVisionApplicationTests {
+class GsApplicationTests {
 
 	@Test
 	void contextLoads() {

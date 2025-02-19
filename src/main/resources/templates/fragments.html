@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eletrotech - Base</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<!-- Fragmento de Cabeçalho com Navbar -->
+<div th:fragment="header">
+    <header class="bg-dark text-white p-4">
+        <h1 class="text-center">Eletrotech</h1>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Eletrotech</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a th:href="@{/home}" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a th:href="@{/consumo}" class="nav-link">Formulário</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/logout" class="btn btn-outline-light">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<!-- Fragmento de Rodapé -->
+<div th:fragment="footer">
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p>&copy; 2024 Eletrotech. Todos os direitos reservados.</p>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
