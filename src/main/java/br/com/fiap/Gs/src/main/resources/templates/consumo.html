@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Consumo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<!-- Inclui o cabeçalho com a Navbar -->
+<div th:replace="fragments :: header"></div>
+
+<main class="container mt-4">
+    <div class="text-center">
+        <h1 class="text-primary">Inserir Novo Consumo</h1>
+    </div>
+
+    <div class="mt-5">
+        <!-- Formulário para o consumo -->
+        <form action="/consumo/salvarConsumo" method="post">
+            <div class="mb-3">
+                <input type="number" name="consumoKwh" placeholder="Consumo em kWh" required class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <!-- Campo para data e hora como texto livre -->
+                <input type="text" name="dataConsumo" placeholder="Digite a data e hora (ex: 21/11/2024 15:30)" required class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="nomeUsuario" placeholder="Nome do Usuário" required class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="nomeEquipamento" placeholder="Nome do Equipamento" required class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <input type="text" name="nomeDistribuidora" placeholder="Nome da Distribuidora" required class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+
+        <!-- Mensagem de sucesso após o formulário ser enviado -->
+        <div th:if="${mensagem}" class="alert alert-success mt-3">
+            <p th:text="${mensagem}"></p>
+        </div>
+    </div>
+</main>
+
+<!-- Inclui o rodapé -->
+<div th:replace="fragments :: footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
